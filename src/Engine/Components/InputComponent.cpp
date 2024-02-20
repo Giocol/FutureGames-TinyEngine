@@ -7,12 +7,12 @@ InputComponent::InputComponent(float playerX, float playerY, float playerSpeed) 
 	this->playerSpeed = playerSpeed;
 }
 
-void InputComponent::inputTick() {
+void InputComponent::input_tick() {
 	engSetDrawColor(COLOR_DARK_GRAY);
 	engClearScreen();
 
 	engSetDrawColor(COLOR_SALMON);
-	engFillRect(playerX, playerY, 32, 32);
+	engFillRect((int) playerX, (int) playerY, 32, 32);
 
 	engDrawTextF(10, 10, "Speed: %f", playerSpeed);
 	if (engKeyDown(Key::W)) {

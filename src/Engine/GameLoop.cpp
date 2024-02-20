@@ -9,6 +9,6 @@ void initGame() {
 void gameLoop() {
 
 	while (engBeginFrame()) {
-		inputComponent->inputTick();
+		inputComponent->input_tick();
 	}
 }
