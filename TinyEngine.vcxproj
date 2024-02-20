@@ -88,10 +88,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engine\Components\InputComponent.cpp" />
+    <ClCompile Include="src\Engine\GameLoop.cpp" />
     <ClCompile Include="src\Engine\TinyEngine.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Engine\GameLoop.h" />
+    <ClInclude Include="src\Engine\Components\InputComponent.h" />
     <ClInclude Include="src\Engine\Input.h" />
     <ClInclude Include="src\Engine\TinyEngine.h" />
   </ItemGroup>
