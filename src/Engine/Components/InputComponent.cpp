@@ -1,11 +1,8 @@
 #include "InputComponent.h"
 #include "../TinyEngine.h"
 
-InputComponent::InputComponent(float playerX, float playerY, float playerSpeed) {
-	this->playerX = playerX;
-	this->playerY = playerY;
-	this->playerSpeed = playerSpeed;
-}
+InputComponent::InputComponent(float playerX, float playerY, float playerSpeed)
+	: playerX(playerX), playerY(playerY), playerSpeed(playerSpeed) {}
 
 void InputComponent::input_tick() {
 	engSetDrawColor(COLOR_DARK_GRAY);
