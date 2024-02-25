@@ -89,16 +89,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Engine\Components\InputComponent.cpp" />
-    <ClCompile Include="src\Engine\GameLoop.cpp" />
+    <ClCompile Include="src\Game\Actors\Enemy.cpp" />
+    <ClCompile Include="src\Game\Actors\Player.cpp" />
+    <ClCompile Include="src\Game\Actor.cpp" />
+    <ClCompile Include="src\Game\Components\InputComponent.cpp" />
+    <ClCompile Include="src\Game\Game.cpp" />
     <ClCompile Include="src\Engine\TinyEngine.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Engine\GameLoop.h" />
-    <ClInclude Include="src\Engine\Components\InputComponent.h" />
+    <ClInclude Include="src\Game\Actors\Enemy.h" />
+    <ClInclude Include="src\Game\Actors\Player.h" />
+    <ClInclude Include="src\Game\Actor.h" />
+    <ClInclude Include="src\Game\Game.h" />
+    <ClInclude Include="src\Game\Components\InputComponent.h" />
     <ClInclude Include="src\Engine\Input.h" />
     <ClInclude Include="src\Engine\TinyEngine.h" />
+    <ClInclude Include="src\Math\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,5 @@
 #include "Engine/TinyEngine.h"
-#include "Engine/GameLoop.h"
+#include "Game/Game.h"
 
 int main()
 {
@@ -8,8 +8,8 @@ int main()
 	engSetDrawColor(COLOR_DARK_GRAY);
 	engClearScreen();
 
-	initGame();
+	game.initGame();
 
-	gameLoop();
+	game.gameLoop();
 
 }
