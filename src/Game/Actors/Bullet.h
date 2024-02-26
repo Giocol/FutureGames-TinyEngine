@@ -1,5 +1,6 @@
 #pragma once
 #include "Game/Actor.h"
+#include "Game/Game.h"
 
 class Bullet : public Actor {
 public:

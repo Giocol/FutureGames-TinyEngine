@@ -2,6 +2,13 @@
 #include "Math/Vector.h"
 #include "Engine/TinyEngine.h"
 
+enum class CollisionChannel {
+	Player,
+	Enemy,
+	Bullet,
+	None
+};
+
 class Actor {
 public:
 	Actor(Vector position, Vector size, Color color)
@@ -10,8 +17,16 @@ public:
 	virtual void update() {}
 	virtual void render();
 
+	void destroy() { isDestroyed = true; }
+	bool getIsDestroyed() { return isDestroyed; }
+
 	Vector position;
 	Vector size = Vector(32);
 	Color color = COLOR_WHITE;
+
+	CollisionChannel collisionChannel = CollisionChannel::None;
+
+private:
+	bool isDestroyed = false;
 };
 

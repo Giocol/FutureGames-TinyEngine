@@ -4,7 +4,7 @@
 
 class Player :public Actor {
 public:
-	Player(Vector position) : Actor(position, Vector(32), COLOR_WHITE) {};
+	Player(Vector position) : Actor(position, Vector(32), COLOR_WHITE) { collisionChannel = CollisionChannel::Player; };
 
 	void update() override;
 	void render() override;

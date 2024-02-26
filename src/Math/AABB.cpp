@@ -1,6 +1,6 @@
 #include "AABB.h"
 
-bool aabbOverlap(AABB a, AABB b)
+bool AABB::aabbOverlap(AABB a, AABB b)
 {
     return
         a.max.x >= b.min.x && b.max.x >= a.min.x &&

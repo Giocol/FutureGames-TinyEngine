@@ -21,7 +21,7 @@ public:
 
 	void spawn_actor(Actor* actor);
 
-	Actor* getCollidingActor(Actor* other);
+	Actor* getCollidingActor(Actor* other, CollisionChannel collisionChannel);
 
 private:
 	void update();

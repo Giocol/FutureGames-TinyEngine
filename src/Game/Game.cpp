@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <Math/AABB.h>
 
 Game game;
 
@@ -35,11 +36,16 @@ void Game::spawn_actor(Actor* actor) {
 	}
 }
 
-Actor* Game::getCollidingActor(Actor* other)
+Actor* Game::getCollidingActor(Actor* other, CollisionChannel channel)
 {
 	for (int i = 0; i < MAX_ACTORS; ++i) {
-		if (actors[i] != other && actors[i] != nullptr) {
+		if (actors[i] != other && actors[i] != nullptr && actors[i]->collisionChannel == channel) {
+			AABB a = AABB::fromPositionSize(other->position, other->size);
+			AABB b = AABB::fromPositionSize(actors[i]->position, actors[i]->size);
 
+			if (AABB::aabbOverlap(a, b)) {
+				return actors[i];
+			}
 		}
 	}
 	return nullptr;
@@ -51,7 +57,13 @@ void Game::update() {
 		if (actors[i] != nullptr)
 		{
 			actors[i]->update();
+
+			if (actors[i]->getIsDestroyed()) {
+				delete actors[i];
+				actors[i] = nullptr;
+			}
 		}
+
 	}
 }
 
