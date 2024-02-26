@@ -1,6 +1,6 @@
 #pragma once
-#include "../Math/Vector.h"
-#include "../Engine/TinyEngine.h"
+#include "Math/Vector.h"
+#include "Engine/TinyEngine.h"
 
 class Actor {
 public:

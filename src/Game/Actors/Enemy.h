@@ -1,6 +1,7 @@
 #pragma once
-#include "../Actor.h"
-#include "../Game.h"
+#include "Game/Actor.h"
+#include "Game/Game.h"
+
 class Enemy : public Actor {
 public:
 	Enemy(Vector position) : Actor(position, Vector(20.f, 20.f), COLOR_RED) {};

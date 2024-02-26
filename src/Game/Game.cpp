@@ -7,6 +7,8 @@ void Game::initGame() {
 	player = actors[0];
 
 	actors[1] = new Enemy(Vector(600.f, 250.f));
+	actors[2] = new Enemy(Vector(300.f, 250.f));
+
 }
 
 void Game::gameLoop() {

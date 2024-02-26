@@ -1,6 +1,6 @@
 #pragma once
-#include "../Actor.h"
-#include "../Components/InputComponent.h"
+#include "Game/Actor.h"
+#include "Game/Components/InputComponent.h"
 
 class Player :public Actor {
 public:
