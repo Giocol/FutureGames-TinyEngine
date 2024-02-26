@@ -35,6 +35,16 @@ void Game::spawn_actor(Actor* actor) {
 	}
 }
 
+Actor* Game::getCollidingActor(Actor* other)
+{
+	for (int i = 0; i < MAX_ACTORS; ++i) {
+		if (actors[i] != other && actors[i] != nullptr) {
+
+		}
+	}
+	return nullptr;
+}
+
 void Game::update() {
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{

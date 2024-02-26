@@ -21,6 +21,8 @@ public:
 
 	void spawn_actor(Actor* actor);
 
+	Actor* getCollidingActor(Actor* other);
+
 private:
 	void update();
 	void render();
