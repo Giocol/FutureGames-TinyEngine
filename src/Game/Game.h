@@ -19,6 +19,8 @@ public:
 
 	Actor* get_player() { return player; }
 
+	void spawn_actor(Actor* actor);
+
 private:
 	void update();
 	void render();

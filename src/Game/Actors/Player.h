@@ -7,6 +7,8 @@ public:
 	Player(Vector position) : Actor(position, Vector(32), COLOR_WHITE) {};
 
 	void update() override;
+	void render() override;
+
 	float speed = 100.f;
 };
 

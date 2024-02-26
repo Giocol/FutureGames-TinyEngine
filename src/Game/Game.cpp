@@ -26,6 +26,15 @@ void Game::gameLoop() {
 	}
 }
 
+void Game::spawn_actor(Actor* actor) {
+	for (int i = 0; i < MAX_ACTORS; ++i) {
+		if (actors[i] == nullptr) {
+			actors[i] = actor;
+			break;
+		}
+	}
+}
+
 void Game::update() {
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
