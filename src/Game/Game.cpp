@@ -59,6 +59,9 @@ void Game::update() {
 			actors[i]->update();
 
 			if (actors[i]->getIsDestroyed()) {
+				if (actors[i] == player) {
+					player = nullptr;
+				}
 				delete actors[i];
 				actors[i] = nullptr;
 			}
