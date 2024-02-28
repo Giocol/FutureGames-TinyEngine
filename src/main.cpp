@@ -1,9 +1,10 @@
 #include "Engine/TinyEngine.h"
 #include "Game/Game.h"
+#include "Config.h"
 
 int main()
 {
-	engInit("Tiny Engine", 800, 600);
+	engInit("Tiny Engine", Config::WINDOW_WIDTH, Config::WINDOW_HEIGHT);
 
 	engSetDrawColor(COLOR_DARK_GRAY);
 	engClearScreen();

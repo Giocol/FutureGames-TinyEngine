@@ -53,7 +53,7 @@ Actor* Game::getCollidingActor(Actor* other, CollisionChannel channel)
 }
 
 void Game::update() {
-	if (engTimePassedSince(lastSpawnTime) > SPAWN_INTERVAL) {
+	if (engTimePassedSince(lastSpawnTime) > SPAWN_INTERVAL && player != nullptr) {
 		float angle = engRandomF() * PI;
 		Vector offset = Vector(cosf(angle), sinf(angle)) * 700.f;
 
