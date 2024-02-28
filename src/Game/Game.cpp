@@ -2,6 +2,7 @@
 #include <Math/AABB.h>
 
 Game* game = nullptr;
+constexpr float PI = 3.14f;
 
 void Game::initGame() {
 	actors[0] = new Player(Vector(100.f, 100.f));
@@ -53,7 +54,10 @@ Actor* Game::getCollidingActor(Actor* other, CollisionChannel channel)
 
 void Game::update() {
 	if (engTimePassedSince(lastSpawnTime) > SPAWN_INTERVAL) {
-		spawn_actor(new Enemy(Vector(static_cast<float>(engRandom(0, 800)), static_cast<float>(engRandom(0, 600)))));
+		float angle = engRandomF() * PI;
+		Vector offset = Vector(cosf(angle), sinf(angle)) * 700.f;
+
+		spawn_actor(new Enemy(Vector(player->position + offset)));
 		lastSpawnTime = engCurrentTime();
 	}
 
