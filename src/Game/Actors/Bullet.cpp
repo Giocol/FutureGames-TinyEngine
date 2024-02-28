@@ -17,7 +17,7 @@ void Bullet::update() {
 		destroy();
 	}
 
-	if (engTimePassedSince(spawnTime) > 1.f) {
+	if (engTimePassedSince(spawnTime) > BULLET_LIFETIME) {
 		destroy();
 	}
 }

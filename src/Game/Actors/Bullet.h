@@ -8,6 +8,8 @@ public:
 	void update() override;
 
 private:
+	static constexpr float BULLET_LIFETIME = 1.f;
+
 	Vector direction;
 	float spawnTime;
 };
