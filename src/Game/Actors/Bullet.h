@@ -9,5 +9,6 @@ public:
 
 private:
 	Vector direction;
+	float spawnTime;
 };
 
