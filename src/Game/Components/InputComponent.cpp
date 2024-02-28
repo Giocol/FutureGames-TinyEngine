@@ -24,6 +24,6 @@ void input_tick(Vector& position, float& speed) {
 	if (engMouseButtonPressed(Mouse_Button::Left)) {
 		//spawn bullet
 		Vector bulletDirection = Vector(static_cast<float>(engMouseX()), static_cast<float>(engMouseY())) - position;
-		game.spawn_actor(new Bullet(position, bulletDirection));
+		game->spawn_actor(new Bullet(position, bulletDirection));
 	}
 }

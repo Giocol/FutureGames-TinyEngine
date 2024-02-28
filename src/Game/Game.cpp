@@ -1,7 +1,7 @@
 #include "Game.h"
 #include <Math/AABB.h>
 
-Game game;
+Game* game = nullptr;
 
 void Game::initGame() {
 	actors[0] = new Player(Vector(100.f, 100.f));

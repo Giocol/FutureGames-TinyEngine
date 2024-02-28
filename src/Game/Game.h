@@ -33,5 +33,5 @@ private:
 	float player_speed = 100.f;
 };
 
-extern Game game;
+extern Game* game;
 

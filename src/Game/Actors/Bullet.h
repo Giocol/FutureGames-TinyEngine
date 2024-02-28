@@ -8,7 +8,8 @@ public:
 	void update() override;
 
 private:
-	static constexpr float BULLET_LIFETIME = 1.f;
+	static constexpr float SPEED = 1000.f;
+	static constexpr float LIFETIME = 1.f;
 
 	Vector direction;
 	float spawnTime;

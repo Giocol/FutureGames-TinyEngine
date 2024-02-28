@@ -8,16 +8,16 @@ Bullet::Bullet(Vector position, Vector direction)
 }
 
 void Bullet::update() {
-	position += direction * 1000.f * engDeltaTime();
+	position += direction * SPEED * engDeltaTime();
 
-	Actor* hitActor = game.getCollidingActor(this, CollisionChannel::Enemy);
+	Actor* hitActor = game->getCollidingActor(this, CollisionChannel::Enemy);
 
 	if (hitActor != nullptr) {
 		hitActor->destroy();
 		destroy();
 	}
 
-	if (engTimePassedSince(spawnTime) > BULLET_LIFETIME) {
+	if (engTimePassedSince(spawnTime) > LIFETIME) {
 		destroy();
 	}
 }

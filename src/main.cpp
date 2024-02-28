@@ -8,8 +8,11 @@ int main()
 	engSetDrawColor(COLOR_DARK_GRAY);
 	engClearScreen();
 
-	game.initGame();
+	game = new Game();
 
-	game.gameLoop();
+	game->initGame();
 
+	game->gameLoop();
+
+	delete game;
 }
