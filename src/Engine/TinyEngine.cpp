@@ -47,7 +47,7 @@ void engInit(const char* title, int width, int height)
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	// Initialize randomness
-	srand(time(NULL));
+	srand(static_cast<unsigned int>(time(NULL)));
 
 	// Enable alpha blending
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
@@ -243,8 +243,8 @@ void engDrawCircle(int x, int y, float radius)
 		float offset_y = sinf(STEP * i);
 
 		points[i] = {
-			x + cosf(STEP * i) * radius,
-			y + sinf(STEP * i) * radius
+			x + offset_x * radius,
+			y + offset_y * radius
 		};
 	}
 
