@@ -27,10 +27,13 @@ private:
 	void update();
 	void render();
 
+	static constexpr float SPAWN_INTERVAL = .5f;
+
 	Actor* actors[MAX_ACTORS] = { nullptr };
 	Actor* player = nullptr;
 
 	float player_speed = 100.f;
+	float lastSpawnTime = .0f;
 };
 
 extern Game* game;

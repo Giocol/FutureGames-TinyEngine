@@ -52,6 +52,11 @@ Actor* Game::getCollidingActor(Actor* other, CollisionChannel channel)
 }
 
 void Game::update() {
+	if (engTimePassedSince(lastSpawnTime) > SPAWN_INTERVAL) {
+		spawn_actor(new Enemy(Vector(static_cast<float>(engRandom(0, 800)), static_cast<float>(engRandom(0, 600)))));
+		lastSpawnTime = engCurrentTime();
+	}
+
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
 		if (actors[i] != nullptr)
