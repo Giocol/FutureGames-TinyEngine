@@ -22,6 +22,8 @@ struct Vector {
 
 	void operator+=(Vector rhs) { x += rhs.x; y += rhs.y; }
 
+	static Vector lerp(Vector a, Vector b, float t);
+
 	float x = 0.f;
 	float y = 0.f;
 };

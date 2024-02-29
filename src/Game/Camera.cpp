@@ -4,7 +4,12 @@
 
 void Camera::update() {
 	if (game->get_player() != nullptr) {
-		position = game->get_player()->position;
+		Vector playerPosition = game->get_player()->position;
+		Vector mouse_position = screenToWorld(Vector(static_cast<float>(engMouseX()), static_cast<float>(engMouseY())));
+
+		Vector target_position = Vector::lerp(playerPosition, mouse_position, 0.3f);
+
+		position = Vector::lerp(position, target_position, CAMERA_SPEED * engDeltaTime());
 	}
 }
 

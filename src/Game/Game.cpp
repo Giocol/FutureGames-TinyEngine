@@ -81,6 +81,22 @@ void Game::update() {
 }
 
 void Game::render() {
+	// Draw background
+	for (int x = -50; x <= 50; ++x)
+	{
+		for (int y = -50; y <= 50; ++y)
+		{
+			if ((x + y) % 2 == 0)
+				engSetDrawColor(0x120D0FFF);
+			else
+				engSetDrawColor(0x21181BFF);
+
+			Vector position = Vector(x * GRID_SIZE, y * GRID_SIZE);
+			position = camera.worldToScreen(position);
+
+			engFillRect(position.x, position.y, GRID_SIZE, GRID_SIZE);
+		}
+	}
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
 		if (actors[i] != nullptr)

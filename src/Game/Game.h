@@ -29,6 +29,7 @@ private:
 	void render();
 
 	static constexpr float SPAWN_INTERVAL = .5f;
+	static constexpr float GRID_SIZE = 100.f;
 
 	Actor* actors[MAX_ACTORS] = { nullptr };
 	Actor* player = nullptr;

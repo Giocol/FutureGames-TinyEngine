@@ -8,5 +8,6 @@ public:
 	Vector screenToWorld(Vector vec);
 private:
 	Vector position;
+	static constexpr float CAMERA_SPEED = 8.5f;
 };
 
