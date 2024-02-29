@@ -1,11 +1,12 @@
 #pragma once
-#include "Actor.h"
-#include "Game.h"
+#include "Math/Vector.h"
 
-class Camera : public Actor {
+class Camera {
 public:
 	void update();
 	Vector worldToScreen(Vector vec);
 	Vector screenToWorld(Vector vec);
+private:
+	Vector position;
 };
 

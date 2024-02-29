@@ -23,7 +23,11 @@ void input_tick(Vector& position, float& speed) {
 	
 	if (engMouseButtonPressed(Mouse_Button::Left)) {
 		//spawn bullet
-		Vector bulletDirection = Vector(static_cast<float>(engMouseX()), static_cast<float>(engMouseY())) - position;
+		Vector mousePosition = Vector(static_cast<float>(engMouseX()), static_cast<float>(engMouseY()));
+		mousePosition = game->get_camera().screenToWorld(mousePosition);
+
+		Vector bulletDirection = mousePosition - position;
+		bulletDirection.normalize();
 		game->spawn_actor(new Bullet(position, bulletDirection));
 	}
 }

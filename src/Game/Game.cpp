@@ -77,6 +77,7 @@ void Game::update() {
 		}
 
 	}
+	camera.update();
 }
 
 void Game::render() {
