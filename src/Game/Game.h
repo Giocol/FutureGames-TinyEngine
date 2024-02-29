@@ -3,11 +3,14 @@
 #include "Components/InputComponent.h"
 #include "Actors/Player.h"
 #include "Actors/Enemy.h"
-#include "Camera.h"
+
+
 
 #define MAX_ACTORS 20
 
-class Game {
+
+class Game
+{
 public:
 	Game() = default;
 
@@ -15,7 +18,6 @@ public:
 	void gameLoop();
 
 	Actor* get_player() { return player; }
-	Camera& get_camera() { return *camera; }
 
 	void spawn_actor(Actor* actor);
 
@@ -26,13 +28,9 @@ private:
 	void render();
 
 	static constexpr float SPAWN_INTERVAL = .5f;
-	static constexpr float GRID_SIZE = 100.f;
-
 
 	Actor* actors[MAX_ACTORS] = { nullptr };
 	Actor* player = nullptr;
-
-	Camera* camera;
 
 	float player_speed = 100.f;
 	float lastSpawnTime = .0f;
