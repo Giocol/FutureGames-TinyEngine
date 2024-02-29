@@ -24,6 +24,8 @@ struct Vector {
 
 	float x = 0.f;
 	float y = 0.f;
+
+	static Vector lerp(Vector a, Vector b, float t);
 };
 
 inline Vector operator+(Vector lhs, Vector rhs) { return Vector(lhs.x + rhs.x, lhs.y + rhs.y); }
