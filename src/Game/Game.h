@@ -6,7 +6,7 @@
 #include "Camera.h"
 
 
-#define MAX_ACTORS 20
+#define MAX_ACTORS 50
 
 
 class Game
@@ -29,6 +29,8 @@ private:
 	void render();
 
 	static constexpr float SPAWN_INTERVAL = .5f;
+	static constexpr int MAX_NUM_ENEMIES = 30;
+
 	static constexpr float GRID_SIZE = 100.f;
 	static constexpr float PICKUP_INTERVAL = 5.f;
 

@@ -55,11 +55,13 @@ Actor* Game::getCollidingActor(Actor* other, CollisionChannel channel)
 
 void Game::update() {
 	if (engTimePassedSince(lastSpawnTime) > SPAWN_INTERVAL && player != nullptr) {
-		float angle = engRandomF() * PI;
-		Vector offset = Vector(cosf(angle), sinf(angle)) * 700.f;
+		if (Enemy::NUM_ENEMIES < MAX_NUM_ENEMIES) {
+			float angle = engRandomF() * PI;
+			Vector offset = Vector(cosf(angle), sinf(angle)) * 700.f;
 
-		spawn_actor(new Enemy(Vector(player->position + offset)));
-		lastSpawnTime = engCurrentTime();
+			spawn_actor(new Enemy(Vector(player->position + offset)));
+			lastSpawnTime = engCurrentTime();
+		}
 	}
 	if (engTimePassedSince(lastPickupSpawnTime) > PICKUP_INTERVAL && player != nullptr) {
 		float angle = engRandomF() * PI;

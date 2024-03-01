@@ -4,16 +4,15 @@
 
 class Enemy : public Actor {
 public:
-	Enemy(Vector position) : Actor(position, Vector(20.f, 20.f), COLOR_RED) { collisionChannel = CollisionChannel::Enemy;  };
+	static int NUM_ENEMIES; 
+
+	Enemy(Vector position);;
+	~Enemy();
+	
 	void update() override;
 	void render() override;
 
-	void hit(int damage) {
-		health -= damage;
-		if (health <= 0) {
-			destroy();
-		}
-	}
+	void hit(int damage);
 
 	float speed = 50.f;
 private:

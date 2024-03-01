@@ -1,5 +1,18 @@
 #include "Enemy.h"
 
+int Enemy::NUM_ENEMIES = 0;
+
+Enemy::Enemy(Vector position) 
+	: Actor(position, Vector(20.f, 20.f), COLOR_RED) {
+	collisionChannel = CollisionChannel::Enemy; 
+NUM_ENEMIES++; 
+}
+
+
+Enemy::~Enemy() {
+	NUM_ENEMIES--;
+}
+
 void Enemy::update() {
 	if (game->get_player() != nullptr) {
 		Vector direction = game->get_player()->position - position;
@@ -26,4 +39,11 @@ void Enemy::render() {
 		engFillRect(static_cast<int>(screenPosition.x - 26), static_cast<int>(screenPosition.y - 32), static_cast<int>(26.f * 2.f * healthPercentage), 8);
 	}
 	Actor::render();
+}
+
+void Enemy::hit(int damage) {
+	health -= damage;
+	if (health <= 0) {
+		destroy();
+	}
 }
