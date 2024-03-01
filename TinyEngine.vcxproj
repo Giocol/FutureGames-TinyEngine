@@ -89,6 +89,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Game\Actors\Pickup.cpp" />
     <ClCompile Include="src\Game\Camera.cpp" />
     <ClCompile Include="src\Game\Actors\Bullet.cpp" />
     <ClCompile Include="src\Game\Actors\Enemy.cpp" />
@@ -102,6 +103,7 @@
     <ClCompile Include="src\Math\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Game\Actors\Pickup.h" />
     <ClInclude Include="src\Config.h" />
     <ClInclude Include="src\Game\Camera.h" />
     <ClInclude Include="src\Game\Actors\Bullet.h" />

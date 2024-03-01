@@ -6,6 +6,7 @@ enum class CollisionChannel {
 	Player,
 	Enemy,
 	Bullet,
+	Pickup,
 	None
 };
 

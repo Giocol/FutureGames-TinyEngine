@@ -30,6 +30,7 @@ private:
 
 	static constexpr float SPAWN_INTERVAL = .5f;
 	static constexpr float GRID_SIZE = 100.f;
+	static constexpr float PICKUP_INTERVAL = 5.f;
 
 	Actor* actors[MAX_ACTORS] = { nullptr };
 	Actor* player = nullptr;
@@ -38,6 +39,7 @@ private:
 
 	float player_speed = 100.f;
 	float lastSpawnTime = .0f;
+	float lastPickupSpawnTime = .0f;
 };
 
 extern Game* game;

@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <Math/AABB.h>
+#include "Actors/Pickup.h"
 
 Game* game = nullptr;
 constexpr float PI = 3.14f;
@@ -59,6 +60,13 @@ void Game::update() {
 
 		spawn_actor(new Enemy(Vector(player->position + offset)));
 		lastSpawnTime = engCurrentTime();
+	}
+	if (engTimePassedSince(lastPickupSpawnTime) > PICKUP_INTERVAL && player != nullptr) {
+		float angle = engRandomF() * PI;
+		Vector offset = Vector(cosf(angle), sinf(angle)) * 300.f;
+
+		spawn_actor(new Pickup(Vector(player->position + offset)));
+		lastPickupSpawnTime = engCurrentTime();
 	}
 
 	for (int i = 0; i < MAX_ACTORS; ++i)

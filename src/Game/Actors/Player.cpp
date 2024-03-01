@@ -2,6 +2,11 @@
 
 void Player::update() {
 	input_tick(position, speed);
+	Actor* pickupActor = game->getCollidingActor(this, CollisionChannel::Pickup);
+	if (pickupActor) {
+		pickupActor->destroy();
+		health++;
+	}
 }
 
 void Player::render() {
