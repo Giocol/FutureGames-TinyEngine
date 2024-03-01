@@ -20,6 +20,8 @@ public:
 	void destroy() { isDestroyed = true; }
 	bool getIsDestroyed() { return isDestroyed; }
 
+	virtual void hit(int) { destroy(); }
+
 	Vector position;
 	Vector size = Vector(32);
 	Color color = COLOR_WHITE;

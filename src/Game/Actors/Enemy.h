@@ -8,5 +8,7 @@ public:
 	void update() override;
 
 	float speed = 50.f;
+private:
+	int attackDamage = 1;
 };
 

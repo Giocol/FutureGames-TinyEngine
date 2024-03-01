@@ -23,3 +23,15 @@ void Player::render() {
 
 	Actor::render();
 }
+
+void Player::hit(int damage) {
+	if (!isInvicible()) {
+		health =- damage;
+		
+		lastHitTime = engCurrentTime();
+
+		if (health <= 0) {
+			destroy();
+		}
+	}
+}

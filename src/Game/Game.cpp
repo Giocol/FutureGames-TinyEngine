@@ -94,7 +94,7 @@ void Game::render() {
 			Vector position = Vector(x * GRID_SIZE, y * GRID_SIZE);
 			position = camera.worldToScreen(position);
 
-			engFillRect(position.x, position.y, GRID_SIZE, GRID_SIZE);
+			engFillRect((int)position.x, (int)position.y, (int)GRID_SIZE, (int)GRID_SIZE);
 		}
 	}
 	for (int i = 0; i < MAX_ACTORS; ++i)

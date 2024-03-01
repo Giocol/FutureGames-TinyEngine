@@ -10,7 +10,7 @@ void Enemy::update() {
 		Actor* hitActor = game->getCollidingActor(this, CollisionChannel::Player);
 
 		if (hitActor != nullptr) {
-			hitActor->destroy();
+			hitActor->hit(attackDamage);
 		}
 	}
 }
