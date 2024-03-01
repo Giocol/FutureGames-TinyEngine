@@ -13,7 +13,7 @@ void Bullet::update() {
 	Actor* hitActor = game->getCollidingActor(this, CollisionChannel::Enemy);
 
 	if (hitActor != nullptr) {
-		hitActor->destroy();
+		hitActor->hit(DAMAGE);
 		destroy();
 	}
 

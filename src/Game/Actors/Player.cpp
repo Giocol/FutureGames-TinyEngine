@@ -3,7 +3,7 @@
 void Player::update() {
 	input_tick(position, speed);
 	Actor* pickupActor = game->getCollidingActor(this, CollisionChannel::Pickup);
-	if (pickupActor) {
+	if (pickupActor && health < MAX_HEALTH) {
 		pickupActor->destroy();
 		health++;
 	}

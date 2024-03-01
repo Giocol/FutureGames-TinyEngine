@@ -10,6 +10,7 @@ public:
 private:
 	static constexpr float SPEED = 1000.f;
 	static constexpr float LIFETIME = 1.f;
+	static constexpr int DAMAGE = 40;
 
 	Vector direction;
 	float spawnTime;
