@@ -14,12 +14,13 @@ public:
 	float speed = 300.f;
 private:
 	static constexpr float INVINCIBILITY_TIME = 2.f;
+	static constexpr int MAX_HEALTH = 3;
 
 	bool isInvicible() {
 		return engTimePassedSince(lastHitTime) < INVINCIBILITY_TIME;
 	}
 
-	int health = 3;
-	float lastHitTime = 0.f;
+	int health = MAX_HEALTH;
+	float lastHitTime = -INVINCIBILITY_TIME;
 };
 

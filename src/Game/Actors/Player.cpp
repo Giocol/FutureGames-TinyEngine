@@ -21,12 +21,36 @@ void Player::render() {
 		(int)crosshair_end.x, (int)crosshair_end.y
 	);
 
+	//Render health UI
+	for (int i = 0; i < MAX_HEALTH; i++) {
+		if (i < health) {
+			engSetDrawColor(COLOR_WHITE);
+		}
+		else {
+			engSetDrawColor(0xFFFFFF55);
+		}
+		engFillRect(10 + 40 * i, 10, 32, 32);
+	}
+	
+	//flash player when invicnible
+	if (isInvicible()) {
+		if (static_cast<int>(engCurrentTime() * 5) % 2 == 0) {
+			color = 0xFFFFFF77;
+		}
+		else {
+			color = COLOR_WHITE;
+		}
+	}
+	else {
+		color = COLOR_WHITE;
+	}
+
 	Actor::render();
 }
 
 void Player::hit(int damage) {
 	if (!isInvicible()) {
-		health =- damage;
+		health -= damage;
 		
 		lastHitTime = engCurrentTime();
 
