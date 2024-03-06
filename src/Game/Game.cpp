@@ -5,13 +5,20 @@
 Game* game = nullptr;
 constexpr float PI = 3.14f;
 
+void spawnEnemy() {
+	if (Enemy::NUM_ENEMIES < game->MAX_NUM_ENEMIES) {
+		float angle = engRandomF() * PI;
+		Vector offset = Vector(cosf(angle), sinf(angle)) * 700.f;
+
+		game->spawn_actor(new Enemy(Vector(game->get_player()->position + offset)));
+	}
+}
+
 void Game::initGame() {
 	actors[0] = new Player(Vector(100.f, 100.f));
 	player = actors[0];
 
-	actors[1] = new Enemy(Vector(600.f, 250.f));
-	actors[2] = new Enemy(Vector(300.f, 250.f));
-
+	timers.addTimer(SPAWN_INTERVAL, &spawnEnemy);
 }
 
 void Game::gameLoop() {
@@ -54,7 +61,7 @@ Actor* Game::getCollidingActor(Actor* other, CollisionChannel channel)
 }
 
 void Game::update() {
-	if (engTimePassedSince(lastSpawnTime) > SPAWN_INTERVAL && player != nullptr) {
+	/*if (engTimePassedSince(lastSpawnTime) > SPAWN_INTERVAL && player != nullptr) {
 		if (Enemy::NUM_ENEMIES < MAX_NUM_ENEMIES) {
 			float angle = engRandomF() * PI;
 			Vector offset = Vector(cosf(angle), sinf(angle)) * 700.f;
@@ -63,13 +70,17 @@ void Game::update() {
 			lastSpawnTime = engCurrentTime();
 		}
 	}
+
+
 	if (engTimePassedSince(lastPickupSpawnTime) > PICKUP_INTERVAL && player != nullptr) {
 		float angle = engRandomF() * PI;
 		Vector offset = Vector(cosf(angle), sinf(angle)) * 300.f;
 
 		spawn_actor(new Pickup(Vector(player->position + offset)));
 		lastPickupSpawnTime = engCurrentTime();
-	}
+	}*/
+
+	timers.update();
 
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{

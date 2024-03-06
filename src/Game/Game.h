@@ -4,6 +4,7 @@
 #include "Actors/Player.h"
 #include "Actors/Enemy.h"
 #include "Camera.h"
+#include "Utils/TimerSystem.h"
 
 
 #define MAX_ACTORS 50
@@ -12,6 +13,7 @@
 class Game
 {
 public:
+	static constexpr int MAX_NUM_ENEMIES = 30;
 	Game() = default;
 
 	void initGame();
@@ -29,7 +31,6 @@ private:
 	void render();
 
 	static constexpr float SPAWN_INTERVAL = .5f;
-	static constexpr int MAX_NUM_ENEMIES = 30;
 
 	static constexpr float GRID_SIZE = 100.f;
 	static constexpr float PICKUP_INTERVAL = 5.f;
@@ -38,6 +39,8 @@ private:
 	Actor* player = nullptr;
 
 	Camera camera;
+
+	TimerSystem timers;
 
 	float player_speed = 100.f;
 	float lastSpawnTime = .0f;
